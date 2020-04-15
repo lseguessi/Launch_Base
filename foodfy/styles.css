@@ -152,13 +152,15 @@ footer .foodfy-footer p {
     height: 100%;
     position: fixed;
     top: 0;
+    opacity: 0;
+    visibility: hidden;
 }
 
 
-/* ==== C NTEUDO MODAL */
+/* ==== CONTEUDO MODAL */
 
-.modal-content {
-    background-color: #fff;
+.modal {
+    background-color: rgb(255, 255, 255);
     width: 660px;
     height: 413px;
     margin: 25vh auto;
@@ -166,10 +168,46 @@ footer .foodfy-footer p {
     border-radius: 16px;
 }
 
+.modal img {
+    width: 600px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 30px 30px 20px;
+}
+
+div.modal h1 {
+    font-family: Roboto;
+    font-size: 24px;
+    color: #111111;
+    text-align: center;
+}
+
+div.modal h2 {
+    font-family: Roboto;
+    font-size: 18px;
+    color: #777777;
+    text-align: center;
+}
+
 .modal-overlay .close-modal {
-    color: #000;
+    color: #999999;
     position: absolute;
-    right: 50%;
-    top: 50%;
+    right: 47%;
+    top: 75%;
     cursor: pointer;
+}
+
+
+/* ==== MODAL ACTIVE ===== */
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+iframe {
+    width: 100%;
+    height: 65%;
+    position: absolute;
+    top: 5%;
 }
