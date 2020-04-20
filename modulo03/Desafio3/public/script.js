@@ -22,7 +22,8 @@ document.querySelector('.close-modal').addEventListener('click', function() {
 document.querySelector('.modal').addEventListener('click', function() {
     if (modal.classList.contains('maximize')) {
         modal.classList.remove('maximize')
-    } else {
+    }
+    else{
         modal.classList.add('maximize')
     }
 })

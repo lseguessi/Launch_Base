@@ -142,6 +142,13 @@ main .grid-cursos {
     text-align: center;
 }
 
+/* ==== ERRO 404 ===== */
+.empresa p{
+    color: white;
+    margin-top: 32px;
+    margin-bottom: 64px;
+}
+
 
 /* ===== MODAL ===== */
 
