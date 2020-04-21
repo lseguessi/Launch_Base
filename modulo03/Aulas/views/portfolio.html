@@ -16,83 +16,21 @@
 
 <section class="cards">
 
-    <div class="card" id="xWKRXJ7b9Lw">
-        <div class="card_image-container">
-            <img src="https://img.youtube.com/vi/xWKRXJ7b9Lw/maxresdefault.jpg" alt="Víde Aula">
-        </div>
-        <div class="card_content">
-            <p>Java springboot | Lucas Seguessi</p>
-        </div>
-        <div class="card_info">
-            <p>57 min</p>
-            <p class="card_price">Free</p>
-        </div>
-    </div>
 
-    <div class="card" id="u99tNt3TZf8">
-        <div class="card_image-container" id="u99tNt3TZf8">
-            <img src="https://img.youtube.com/vi/u99tNt3TZf8/maxresdefault.jpg" alt="Víde Aula">
+    {% for item in items %}
+        <div class="card" id="{{item.id}}">
+            <div class="card_image-container">
+                <img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" alt="Imagem de {{item.title}}">
+            </div>
+            <div class="card_content">
+                <p>{{item.title}}</p>
+            </div>
+            <div class="card_info">
+                <p>{{item.duration}}</p>
+                <p class="card_price">{{item.price}}</p>
+            </div>
         </div>
-        <div class="card_content">
-            <p>Formulário animado com JS puro e CSS animation | Mayk Brito</p>
-        </div>
-        <div class="card_info">
-            <p>57 min</p>
-            <p class="card_price">Free</p>
-        </div>
-    </div>
-
-    <div class="card" id="6WB16wZS61c">
-        <div class="card_image-container">
-            <img src="https://img.youtube.com/vi/6WB16wZS61c/maxresdefault.jpg" alt="Víde Aula">
-        </div>
-        <div class="card_content">
-            <p>Criando pastsa automáticas - Python</p>
-        </div>
-        <div class="card_info">
-            <p>57 min</p>
-            <p class="card_price">Free</p>
-        </div>
-    </div>
-
-    <div class="card" id="DDm0M_rZLJo">
-        <div class="card_image-container">
-            <img src="https://img.youtube.com/vi/DDm0M_rZLJo/maxresdefault.jpg" alt="Víde Aula">
-        </div>
-        <div class="card_content">
-            <p>Formulário para Estoque em C# </p>
-        </div>
-        <div class="card_info">
-            <p>57 min</p>
-            <p class="card_price">Free</p>
-        </div>
-    </div>
-
-    <div class="card" id="uonKHztGhko">
-        <div class="card_image-container">
-            <img src="https://img.youtube.com/vi/uonKHztGhko/maxresdefault.jpg" alt="Víde Aula">
-        </div>
-        <div class="card_content">
-            <p>Infográficos automáticos</p>
-        </div>
-        <div class="card_info">
-            <p>57 min</p>
-            <p class="card_price">Free</p>
-        </div>
-    </div>
-
-    <div class="card" id="3t78tTWt">
-        <div class="card_image-container">
-            <img src="https://img.youtube.com/vi/3t78tTWt-JY/maxresdefault.jpg" alt="Víde Aula">
-        </div>
-        <div class="card_content">
-            <p>Programação ladder CLP</p>
-        </div>
-        <div class="card_info">
-            <p>57 min</p>
-            <p class="card_price">Free</p>
-        </div>
-    </div>
+    {% endfor %}
 
 </section>
 
