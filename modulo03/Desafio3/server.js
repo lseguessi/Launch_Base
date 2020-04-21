@@ -2,6 +2,7 @@ const express = require('express')
 const nunjucks = require('nunjucks')
 
 const server = express()
+const contents = require('./data')
 
 server.use(express.static('public'))
 
@@ -13,12 +14,26 @@ nunjucks.configure('views', {
 
 //Renderiza o arquivo sobre.html --> localhost:5000/
 server.get('/', function(req, res){
-    return res.render('sobre')
+    const about = {
+        img: "https://www.flaticon.com/premium-icon/icons/svg/2822/2822812.svg",
+        name: "Seguetech",
+        description: "Ajudaremos você a atingir seu objetico.Trabalhamos com as melhores tecnologias.",
+        techs: [
+            {name: "HTML 5"},
+            {name: "CSS 3"},
+            {name: "JAVASCRIPT"},
+            {name: "REACT"},
+            {name: "REACT NATIVE"},
+            {name: "NODEJS"}
+        ]
+    }
+
+    return res.render('sobre', {about})
 })
 
 //Renderiza o arquivo conteudos.html --> localhost:5000/conteudos
 server.get('/conteudos', function(req, res){
-    return res.render('conteudos')
+    return res.render('conteudos', {content: contents})
 })
 
 //Renderiza o arquivo not-found.html --> localhost:5000/conteudos
