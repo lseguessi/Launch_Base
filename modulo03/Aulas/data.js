@@ -3,7 +3,8 @@ module.exports = [
         id: "xWKRXJ7b9Lw",
         title: "Java springboot | Lucas Seguessi",
         duration: "57 min",
-        price: "Free"
+        price: "Free",
+        featured: true
     },
     { 
         id: "u99tNt3TZf8",
@@ -15,7 +16,8 @@ module.exports = [
         id: "6WB16wZS61c",
         title: "Criando pastsa automáticas - Python",
         duration: "57 min",
-        price: "Free"
+        price: "Free",
+        featured: true
     },
     { 
         id: "DDm0M_rZLJo",
@@ -27,7 +29,8 @@ module.exports = [
         id: "uonKHztGhko",
         title: "Infográficos automáticos",
         duration: "57 min",
-        price: "Free"
+        price: "Free",
+        featured: true
     },
     { 
         id: "HKSUPdcK7OU",

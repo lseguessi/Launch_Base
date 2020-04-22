@@ -6,14 +6,15 @@ const videos = require('./data')
 
 server.use(express.static('public'))
 
-server.set('view engine', 'html')
+server.set('view engine', 'njk')
 
 nunjucks.configure('views', {
     express: server,
-    autoescape: false
+    autoescape: false,
+    noCache: true
 })
 
-server.get("/", function(req, res) {
+server.get('/', function (req, res) {
     const about = {
         avatar_url: "https://avatars0.githubusercontent.com/u/50502905?s=460&u=3e4e23a1095c04b1572305eb2829736e6a1bb98f&v=4",
         name: "Lucas Seguessi",
@@ -27,14 +28,28 @@ server.get("/", function(req, res) {
     }
 
 
-    return res.render('about', {about})
+    return res.render('about', { about })
 })
 
-server.get("/portfolio", function(req, res) {
+server.get('/portfolio', function (req, res) {
 
-    return res.render('portfolio', {items: videos})
+    return res.render('portfolio', { items: videos })
 })
 
-server.listen(5000, function() {
+server.get('/video', function (req, res) {
+    const id = req.query.id
+
+    const video = videos.find(function (video) {
+        return video.id == id
+    })
+
+    if (!video) {
+        return res.send('Video not found!')
+    }
+
+    return res.render('video', { item: video })
+})
+
+server.listen(5000, function () {
     console.log('Server is running')
 })
