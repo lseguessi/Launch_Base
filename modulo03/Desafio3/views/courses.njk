@@ -1,0 +1,31 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+{% endblock %}
+
+{% block content %}
+
+    <main>
+        <div class="courses">
+
+                <div class="course" id="{{card.id}}">
+                    <div class="card-img card-container">
+                        <img src="{{class.img}}" alt="Curso {{class.title}}">
+                    </div>
+                    <div class="card-title">
+                        <h1>{{class.title}}</h1>
+                    </div>
+                    <div class="card-module">
+                        {{class.description}}
+                        <p>{{class.price}}</p>
+                    </div>
+                </div>
+
+            <h1>teste teste</h1>
+
+        </div>
+    </main>
+
+{% endblock %}
+

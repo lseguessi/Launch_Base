@@ -9,7 +9,9 @@ server.use(express.static('public'))
 server.set('view engine', 'njk')
 
 nunjucks.configure('views', {
-    express: server
+    express: server,
+    autoescape: false,
+    noCache: true
 })
 
 //Renderiza o arquivo sobre.html --> localhost:5000/
@@ -36,7 +38,23 @@ server.get('/conteudos', function(req, res){
     return res.render('conteudos', {content: contents})
 })
 
-//Renderiza o arquivo not-found.html --> localhost:5000/conteudos
+//Criar rota para página de courses
+server.get('/courses', function(req, res){
+    const id = req.query.id
+
+    const course = contents.find(function(course) {
+        return course.id == id
+    })
+
+    if(!course){
+        return res.send('Curso não encontrado!')
+    }
+
+    return res.render('courses', {class: course})
+
+})
+
+//Renderiza o arquivo not-found.html
 server.use(function(req, res){
     return res.status(404).render('not-found')
 })
