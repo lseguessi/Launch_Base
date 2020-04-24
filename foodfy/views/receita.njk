@@ -1,0 +1,25 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div id="content">
+        <section class="more-acess">
+            <div class="cards">
+                <div class="card" id="{{recipe.id}}">
+                    <card class="card-img">
+                        <img src="{{recipe.img}}" alt="Imagem de {{recipe.title}}">
+                    </card>
+                    <div class="info-card">
+                        <h5>{{recipe.title}}</h5>
+                        <p class="by-name">por
+                            {{recipe.by}}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h1>{{recipe.title}}</h1>
+        <h2>por {{recipe.by}}</h2>
+    </div>
+
+{% endblock %}
