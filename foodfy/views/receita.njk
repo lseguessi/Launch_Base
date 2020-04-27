@@ -4,22 +4,46 @@
 
     <div id="content">
         <section class="more-acess">
-            <div class="cards">
+
+            <div class="card recipe">
                 <div class="card" id="{{recipe.id}}">
                     <card class="card-img">
                         <img src="{{recipe.img}}" alt="Imagem de {{recipe.title}}">
                     </card>
-                    <div class="info-card">
-                        <h5>{{recipe.title}}</h5>
-                        <p class="by-name">por
-                            {{recipe.by}}</p>
-                    </div>
                 </div>
             </div>
-        </section>
 
-        <h1>{{recipe.title}}</h1>
-        <h2>por {{recipe.by}}</h2>
+            <div class="info-recipe">
+                <h5>{{recipe.title}}</h5>
+                <p class="by-name">por
+                    {{recipe.by}}</p>
+            </div>
+        </section>
     </div>
 
+    <div class="about-recipe">
+        <div class="ingredientes">
+            <h3>Ingredientes
+                <span class="show">Mostrar</span></h3>
+            <div class="ingredients-list">
+                <ul>
+                    {% for ingredient in recipe.ingredients %}
+                        <li>{{ingredient}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="preparation">
+            <h3>Modo de preparo</h3>
+            <ul class="preparation-list">
+                {% for ingredient in recipe.preparation %}
+                    <li>{{ingredient}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="history">
+            <h3>História do prato</h3>
+            <p>{{recipe.information}}</p>
+        </div>
+    </div>
 {% endblock %}

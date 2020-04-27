@@ -1,5 +1,6 @@
-const modalOverlay = document.querySelector('.modal-overlay');
+const show = document.querySelector('.show');
 const cards = document.querySelectorAll('.card');
+const ingredient = document.querySelector('.ingredients-list');
 
 for (let card of cards) {
     card.addEventListener('click', function() {
@@ -7,3 +8,7 @@ for (let card of cards) {
         window.location.href=`/receita?id=${recipe_id}`
     })
 }
+
+document.querySelector('.show').addEventListener('click', function(){
+    ingredient.classList.toggle('hide')
+})
