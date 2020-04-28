@@ -4,13 +4,12 @@
 
     <div id="content">
         <section class="more-acess">
-
             <div class="cards">
                 {% for recipe in recipes %}
-                    <div class="card" id="{{recipe.id}}">
-                        <card class="card-img">
+                    <div class="card" id="">
+                        <div class="card-img">
                             <img src="{{recipe.img}}" alt="Imagem de {{recipe.title}}">
-                        </card>
+                        </div>
                         <div class="info-card">
                             <h5>{{recipe.title}}</h5>
                             <p class="by-name">por

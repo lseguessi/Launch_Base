@@ -7,9 +7,9 @@
 
             <div class="card recipe">
                 <div class="card" id="{{recipe.id}}">
-                    <card class="card-img">
+                    <div class="card-img">
                         <img src="{{recipe.img}}" alt="Imagem de {{recipe.title}}">
-                    </card>
+                    </div>
                 </div>
             </div>
 
@@ -22,20 +22,17 @@
     </div>
 
     <div class="about-recipe">
-        <div class="ingredientes">
-            <h3>Ingredientes
-                <span class="show">Mostrar</span></h3>
-            <div class="ingredients-list">
-                <ul>
+        <div class="ingredients">
+            <h3>Ingredientes <span class="showHide">Mostrar</span></h3>
+                <ul class="list0 hide-show">
                     {% for ingredient in recipe.ingredients %}
                         <li>{{ingredient}}</li>
                     {% endfor %}
                 </ul>
-            </div>
         </div>
         <div class="preparation">
-            <h3>Modo de preparo</h3>
-            <ul class="preparation-list">
+            <h3>Modo de preparo <span class="showHide">Mostrar</span></h3>
+            <ul class="list1 hide-show">
                 {% for ingredient in recipe.preparation %}
                     <li>{{ingredient}}</li>
                 {% endfor %}

@@ -258,17 +258,12 @@ iframe {
     font-size: 18px;
 }
 
-.ingredients-list li,
-.preparation-list li{
+.ingredients li,
+.preparation li{
     margin-left: 16px;
     line-height: 28px;
 }
-
-.phases{
-    display: grid;
-    grid-template-columns: 1fr, 1fr;
-}
  
-.hide{
-    color: white;
+.hide-show{
+    display: none;
 }

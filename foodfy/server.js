@@ -6,6 +6,7 @@ const recipes = require('./data')
 
 server.use(express.static('public'))
 
+
 server.set('view engine', 'njk')
 
 nunjucks.configure('views', {
@@ -26,20 +27,10 @@ server.get('/receitas', function(req, res){
     return res.render('receitas', {recipes})
 })
 
-server.get('/receita', function(req, res){
-    const id = req.query.id
+server.get('/receita/:index', function(req, res){
+    const recipeIndex = req.params.index
 
-    const recipe = recipes.find(function(recipe){
-        if(recipe.id == id){
-            return true
-        }
-    })
-
-    if(!recipe){
-        return res.send('Receita não encontrada!')
-    }
-
-    return res.render('receita', {recipe})
+    return res.render('receita', {recipe :recipes[recipeIndex]})     
 })
 
 //Rota para página não encontrada (não existe)
