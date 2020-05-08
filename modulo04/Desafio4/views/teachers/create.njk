@@ -1,0 +1,72 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    
+    <form class="card" method="POST" action="/teachers">
+        <section class="image" 
+            style="background: url(https://source.unsplash.com/collection/9881186/500x500) no-repeat center center / cover">
+        </section>
+
+        <section class="infos">
+            <h3>Cadastro Professor</h3>
+
+            <div class="item">
+                <div>Foto / Avatar</div>
+                <input 
+                    type="url" 
+                    name="avatar_url"
+                    placeholder="https://"
+                >
+            </div>
+            
+            <div class="item">
+                <div>Nome Completo</div>
+                <input 
+                    type="text" 
+                    name="name"
+                >
+            </div>
+
+            <div class="item">
+                <div>Idade</div>
+                <input 
+                    type="Date"
+                    name="birth"
+                >
+            </div>
+
+            <div class="item">
+                <div>Grau de Escolaridade</div>
+                <select name="school" >
+                    <option value="middle_complet">Ensino Médio Completo</option>
+                    <option value="high_complet">Ensino Superior Completo</option>
+                    <option value="master">Mestrado</option>
+                    <option value="doctor">Doutorado</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <div>Tipo de Aula</div>
+                <div>
+                    <span><input type="radio" name="classes" value="P" checked> Presencial</span>
+                    <span><input type="radio" name="classes" value="D"> à Distância</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Acompanhamento</div>
+                <div>
+                    <input 
+                        type="text" 
+                        name="follow"
+                        placeholder="Matemática, Física, Quimíca...etc"
+                    >
+                </div>
+            </div>
+
+            <input type="submit" value="Salvar">
+
+        </section>
+    </form>    
+
+{% endblock content %}

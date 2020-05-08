@@ -2,21 +2,21 @@
   "instructors": [
     {
       "id": 1,
-      "avatar_url": "https://www.youtube.com",
-      "name": "Lucas",
+      "avatar_url": "http://www.google.com.br",
+      "name": "Lucas Seguessi",
       "birth": 679622400000,
-      "services": "Academia",
       "gender": "M",
-      "created_at": 1588810785376
+      "services": "Academia",
+      "created_at": 1588943272865
     },
     {
       "id": 2,
-      "avatar_url": "https://www.youtube.com",
-      "name": "rwerer",
-      "birth": 895276800000,
-      "gender": "M",
-      "services": "academia",
-      "created_at": 1588810817758
+      "avatar_url": "http://www.google.com.br",
+      "name": "Beatriz Seguessi",
+      "birth": 568252800000,
+      "gender": "F",
+      "services": "Kung-fu",
+      "created_at": 1588943308013
     }
   ]
 }
