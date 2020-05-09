@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     margin: 0;
+    border: none;
 }
 
 body {
@@ -144,4 +145,37 @@ header {
 .infos .item span:hover{
     color: #fff;
     transition: 0.2s;
+}
+
+/* ==== FORM ==== */
+
+input,
+select{
+    width: 100%;
+    outline: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type="radio"]{
+    width: initial;
+    margin-right: 4px;
+}
+
+input::placeholder{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+button[type="submit"]{
+    padding: 8px 32px;
+    width: 100%;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 24px;
+    cursor: pointer;
 }
