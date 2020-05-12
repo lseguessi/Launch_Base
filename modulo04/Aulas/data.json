@@ -6,7 +6,7 @@
       "name": "Lucas Seguessi",
       "birth": 679622400000,
       "gender": "M",
-      "services": "Academia",
+      "services": "Academia, Musculação, crossfit",
       "created_at": 1588943272865
     },
     {
@@ -15,8 +15,26 @@
       "name": "Beatriz Seguessi",
       "birth": 568252800000,
       "gender": "F",
-      "services": "Kung-fu",
+      "services": "Kung-fu, Academia, Luta",
       "created_at": 1588943308013
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://www.youtube.com",
+      "name": "testeste",
+      "birth": -376617600000,
+      "gender": "M",
+      "services": "academia",
+      "created_at": 1589235430365
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://www.youtube.com",
+      "name": "Lucia",
+      "birth": -455846400000,
+      "gender": "F",
+      "services": "Tudo no mundo",
+      "created_at": 1589242533404
     }
   ]
 }
