@@ -14,14 +14,17 @@ routes.get('/teachers/create', function(req, res){
     return res.render('teachers/create')
 })
 
+//show teachers
+routes.get('/teachers/:id', teachers.show)
+
 routes.post('/teachers', teachers.post)
 
 routes.get('/students', function(req, res){
     return res.send('Olá Estudante')
 })
 
-routes.use(function(req, res){
-    return res.status(404).render('not-found')
-})
+// routes.use(function(req, res){
+//     return res.status(404).render('not-found')
+// })
 
 module.exports = routes

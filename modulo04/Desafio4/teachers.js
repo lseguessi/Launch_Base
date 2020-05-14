@@ -1,5 +1,36 @@
 const fs = require('fs')
+const Intl = require('Intl')
 const data = require('./data.json')
+const {age, date, graduation, classes} = require('./utils')
+
+//show
+exports.show = function(req, res){
+    //req.params.id = /:id
+
+    //recupera id do parametro
+    const {id} = req.params
+
+    //Verifica se o ID digitado existe no arquivo data.json
+    const foundTeacher = data.teachers.find(function(teacher){
+        return teacher.id == id
+    })
+
+    if(!foundTeacher) return res.send('Tecaher not found !')
+
+    //Desestruturar dados do retorno do arquivo data.json
+    const teacher ={
+        ...foundTeacher,
+        age: age(foundTeacher.birth), // feito
+        school: graduation(foundTeacher.school), 
+        classes: classes(foundTeacher.classes),
+        follow: foundTeacher.follow.split(","),
+        created_at: new Intl.DateTimeFormat('pt-BR').format(foundTeacher.created_at),
+    }
+
+    return res.render('teachers/show', {teacher})
+
+}
+
 
 //Create data
 exports.post = function(req, res){

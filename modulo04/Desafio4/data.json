@@ -5,9 +5,9 @@
       "avatar_url": "https://www.youtube.com",
       "name": "Lucas",
       "birth": 679622400000,
-      "school": "high_complet",
+      "school": "middle_complet",
       "classes": "P",
-      "follow": "Matemárica",
+      "follow": "Matemática",
       "created_at": 1588986318201
     },
     {
@@ -15,9 +15,9 @@
       "avatar_url": "https://www.youtube.com",
       "name": "uhdeuhduehduhedheuhd",
       "birth": 679622400000,
-      "school": "middle_complet",
+      "school": "superior_complet",
       "classes": "P",
-      "follow": "Matemárica",
+      "follow": "Matemática, Física, ED Físicas",
       "created_at": 1588987761519
     },
     {
@@ -25,10 +25,20 @@
       "avatar_url": "https://www.youtube.com",
       "name": "DDD",
       "birth": -2196547200000,
-      "school": "middle_complet",
+      "school": "master",
       "classes": "D",
       "follow": "matematica, fisica, quimica, biologia",
       "created_at": 1588987804089
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://www.google.com.br",
+      "name": "Teste",
+      "birth": 1264982400000,
+      "school": "doctor",
+      "classes": "D",
+      "follow": "Educação Fisíca",
+      "created_at": 1589490777438
     }
   ]
 }
