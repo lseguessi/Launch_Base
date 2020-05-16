@@ -39,6 +39,16 @@
       "classes": "D",
       "follow": "Educação Fisíca",
       "created_at": 1589490777438
+    },
+    {
+      "id": 5,
+      "avatar_url": "https://avatars0.githubusercontent.com/u/50502905?s=460&u=7991481c5fe3747a527a857553f7c6a37f5fff1a&v=4",
+      "name": "Lucas Seguessi",
+      "birth": 679622400000,
+      "school": "superior_complet",
+      "classes": "P",
+      "follow": "Java, Flutter, JS, HTML, CSS",
+      "created_at": 1589648771953
     }
   ]
 }
