@@ -28,30 +28,13 @@
 <div class="item">
     <div>Grau de Escolaridade</div>
     <select name="school">
-        <option value="middle_complet"
-            {% if teacher.school == "Médio Completo" %}
-                    selected
-            >Ensino Médio Completo
-            </option>
+        <option value="middle_complet">Ensino Médio Completo</option>
 
-        <option value="superior_complet"
-            {% elif teacher.school == "Superior Completo" %}
-                    selected
-            >Ensino Superior Completo
-                </option>
+        <option value="superior_complet">Ensino Superior Completo</option>
 
-        <option value="master"
-            {% elif teacher.school == "Mestrado" %}
-                    selected
-            >Mestrado
-                </option>
+        <option value="master">Mestrado</option>
 
-        <option value="doctor"
-            {% elseif teacher.school == "Doutorado" %}
-                    selected
-            {% endif %}>
-                    Doutorado
-                </option>
+        <option value="doctor">Doutorado</option>
     </select>
 </div>
 
