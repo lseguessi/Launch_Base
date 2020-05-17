@@ -19,15 +19,6 @@
       "created_at": 1588943308013
     },
     {
-      "id": 3,
-      "avatar_url": "https://www.youtube.com",
-      "name": "testeste",
-      "birth": -376617600000,
-      "gender": "M",
-      "services": "academia",
-      "created_at": 1589235430365
-    },
-    {
       "id": 4,
       "avatar_url": "https://source.unsplash.com/collection/8969654/500x500",
       "name": "Lucia",
