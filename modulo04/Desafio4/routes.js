@@ -25,6 +25,8 @@ routes.post('/teachers', teachers.post)
 //Save Edit
 routes.put('/teachers', teachers.put)
 
+//Delete
+routes.delete('/teachers', teachers.delete)
 
 
 //Rote for students

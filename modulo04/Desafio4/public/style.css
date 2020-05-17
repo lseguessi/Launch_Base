@@ -192,3 +192,8 @@ a.button:hover{
     color: black;
     transition: 350ms;
 }
+
+#delet-form button[type="submit"]{
+    margin-top: 12px;
+    background-color: lightcoral;
+}
