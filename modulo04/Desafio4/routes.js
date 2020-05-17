@@ -22,8 +22,12 @@ routes.get('/teachers/:id/edit', teachers.edit)
 
 routes.post('/teachers', teachers.post)
 
-router.put('teachers', teachers.put)
+//Save Edit
+routes.put('/teachers', teachers.put)
 
+
+
+//Rote for students
 routes.get('/students', function(req, res){
     return res.send('Olá Estudante')
 })

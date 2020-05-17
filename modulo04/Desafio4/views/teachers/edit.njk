@@ -2,7 +2,7 @@
 
 {% block content %}
     
-    <form class="card" method="POST" action="/teachers">
+    <form class="card" method="POST" action="/teachers?_method=PUT">
         <section class="image" 
             style="background: url({{ teacher.avatar_url }}) no-repeat center center / cover">
         </section>
@@ -12,6 +12,7 @@
 
             {% include "teachers/fields.njk" %}
 
+            <input type="hidden" name="id" value="{{ teacher.id }}">
         </section>
     </form>    
 

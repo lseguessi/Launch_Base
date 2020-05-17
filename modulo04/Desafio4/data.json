@@ -1,54 +1,34 @@
 {
-  "teachers": [
-    {
-      "id": 1,
-      "avatar_url": "https://www.youtube.com",
-      "name": "Lucas",
-      "birth": 679622400000,
-      "school": "middle_complet",
-      "classes": "P",
-      "follow": "Matemática",
-      "created_at": 1588986318201
-    },
-    {
-      "id": 2,
-      "avatar_url": "https://www.youtube.com",
-      "name": "uhdeuhduehduhedheuhd",
-      "birth": 679622400000,
-      "school": "superior_complet",
-      "classes": "P",
-      "follow": "Matemática, Física, ED Físicas",
-      "created_at": 1588987761519
-    },
-    {
-      "id": 3,
-      "avatar_url": "https://www.youtube.com",
-      "name": "DDD",
-      "birth": -2196547200000,
-      "school": "master",
-      "classes": "D",
-      "follow": "matematica, fisica, quimica, biologia",
-      "created_at": 1588987804089
-    },
-    {
-      "id": 4,
-      "avatar_url": "https://www.google.com.br",
-      "name": "Teste",
-      "birth": 1264982400000,
-      "school": "doctor",
-      "classes": "D",
-      "follow": "Educação Fisíca",
-      "created_at": 1589490777438
-    },
-    {
-      "id": 5,
-      "avatar_url": "https://avatars0.githubusercontent.com/u/50502905?s=460&u=7991481c5fe3747a527a857553f7c6a37f5fff1a&v=4",
-      "name": "Lucas Seguessi",
-      "birth": 679622400000,
-      "school": "superior_complet",
-      "classes": "P",
-      "follow": "Java, Flutter, JS, HTML, CSS",
-      "created_at": 1589648771953
-    }
-  ]
+    "teachers": [
+        {
+            "id": "1",
+            "avatar_url": "https://www.youtube.com",
+            "name": "Lucas Seguessi",
+            "birth": 679622400000,
+            "school": "middle_complet",
+            "classes": "P",
+            "follow": "Matemática",
+            "created_at": 1588986318201
+        },
+        {
+            "id": "2",
+            "avatar_url": "https://www.youtube.com",
+            "name": "Lucia Helena Fernandes Seguessi",
+            "birth": -455846400000,
+            "school": "middle_complet",
+            "classes": "P",
+            "follow": "Matemática, Física, ED Físicas",
+            "created_at": 1588987761519
+        },
+        {
+            "id": "3",
+            "avatar_url": "https://www.youtube.com",
+            "name": "Luiz Carlos Seguessi",
+            "birth": -477446400000,
+            "school": "middle_complet",
+            "classes": "P",
+            "follow": "matematica, fisica, quimica, biologia",
+            "created_at": 1588987804089
+        }
+    ]
 }
