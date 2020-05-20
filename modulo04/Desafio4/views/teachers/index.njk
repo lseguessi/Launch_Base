@@ -3,50 +3,32 @@
 {% block content %}
     
     <div class="card">
-        <section class="image" 
-            style="background: url(https://source.unsplash.com/collection/9881186/500x500) no-repeat center center / cover">
-        </section>
-        <section class="infos">
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome Completo</th>
+                    <th>Acompanhamento</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for teacher in teachers %}
+                    <tr>
+                        <td>
+                            <span style="background-image: url {{ teacher.avatar_url }}"> 
+                                {{ teacher.name }}
+                            </span>
+                        </td>
+                        <td> {{ teacher.follow }}</td>
+                        <td>
+                            <a href="/teachers/{{ teacher.id }}">Ver</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>       
+        </table>
 
-            <h3>Detalhes</h3>
-
-            <div class="item">
-                <div>Nome Completo</div>
-                <div>Lucas Seguessi</div>
-            </div>
-
-            <div class="item">
-                <div>Idade</div>
-                <div>28 Anos</div>
-            </div>
-
-            <div class="item">
-                <div>Grau de Escolaridade</div>
-                <div>Mestrado Completo</div>
-            </div>
-
-            <div class="item">
-                <div>Tipo de Aula</div>
-                <div>
-                    <span>Presencial</span>
-                    <span>à Distância</span>
-                </div>
-            </div>
-
-            <div class="item">
-                <div>Acompanhamento</div>
-                <div>
-                    <span>Matemática</span>
-                    <span>Física</span>
-                </div>
-            </div>
-
-            <div class="item">
-                <div>Desde</div>
-                <div>07/12/2018</div>
-            </div>
-
-        </section>
     </div>    
 
 {% endblock content %}
