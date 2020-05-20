@@ -2,9 +2,9 @@
 
 {% block content %}
     
-    <div class="card">
+    <div class="card table-container">
         
-        <table>
+        <table width="100%">
             <thead>
                 <tr>
                     <th>Nome Completo</th>
@@ -16,9 +16,8 @@
                 {% for teacher in teachers %}
                     <tr>
                         <td>
-                            <span style="background-image: url {{ teacher.avatar_url }}"> 
-                                {{ teacher.name }}
-                            </span>
+                            <span style="background-image: url({{ teacher.avatar_url }})"></span>
+                            {{ teacher.name }}
                         </td>
                         <td> {{ teacher.follow }}</td>
                         <td>

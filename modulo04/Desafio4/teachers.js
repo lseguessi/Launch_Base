@@ -3,6 +3,11 @@ const Intl = require('Intl')
 const data = require('./data.json')
 const {age, date, graduation, classes} = require('./utils')
 
+//Index
+exports.index = function(req, res){
+    return res.render('teachers/index', { teachers: data.teachers})
+}
+
 //Create data
 exports.post = function(req, res){
     const keys = Object.keys(req.body)
