@@ -1,31 +1,31 @@
 {
     "teachers": [
         {
-            "id": "1",
+            "id": 1,
             "avatar_url": "https://avatars0.githubusercontent.com/u/50502905?s=460&u=7991481c5fe3747a527a857553f7c6a37f5fff1a&v=4",
             "name": "Lucas Seguessi",
             "birth": 679622400000,
-            "school": "superior_complet",
+            "school": "middle_complet",
             "classes": "P",
             "follow": "Matemática",
             "created_at": 1588986318201
         },
         {
-            "id": "2",
+            "id": 2,
             "avatar_url": "https://images.unsplash.com/photo-1470919543690-22e21c13163d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
             "name": "Lucia Helena Fernandes Seguessi",
             "birth": -455846400000,
-            "school": "master",
+            "school": "middle_complet",
             "classes": "P",
             "follow": "Matemática, Física, ED Físicas",
             "created_at": 1588987761519
         },
         {
-            "id": "3",
+            "id": 3,
             "avatar_url": "https://images.unsplash.com/flagged/photo-1556895368-9d1eed826c58?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80",
             "name": "Luiz Carlos Seguessi",
             "birth": -477446400000,
-            "school": "master",
+            "school": "middle_complet",
             "classes": "P",
             "follow": "matematica, fisica, quimica, biologia",
             "created_at": 1588987804089
