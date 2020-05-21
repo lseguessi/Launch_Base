@@ -1,20 +1,18 @@
 const fs = require('fs')
 const Intl = require('Intl')
-const data = require('./data.json')
-const { age, date } = require('./utils')
+const data = require('../data.json')
+const { age, date } = require('../utils')
 
-//Index
-exports.index = function (req, res) {
+exports.index = function(req, res) {
     return res.render('instructors/index', { instructors: data.instructors })
 }
 
-//show
-exports.show = function (req, res) {
+exports.show = function(req, res) {
     //req.params.id = /:id
 
     const { id } = req.params
 
-    const foundInstructor = data.instructors.find(function (instructor) {
+    const foundInstructor = data.instructors.find(function(instructor) {
         return instructor.id == id
     })
 
@@ -30,8 +28,7 @@ exports.show = function (req, res) {
     return res.render("instructors/show", { instructor })
 }
 
-//Create
-exports.post = function (req, res) {
+exports.post = function(req, res) {
 
     const keys = Object.keys(req.body)
 
@@ -58,7 +55,7 @@ exports.post = function (req, res) {
         created_at
     })
 
-    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return res.send('Write file error!')
 
         return res.redirect('/instructors')
@@ -67,11 +64,14 @@ exports.post = function (req, res) {
     // return res.send(req.body)
 }
 
-//Edit
-exports.edit = function (req, res) {
+exports.create = function(req, res) {
+    return res.render('instructors/create')
+}
+
+exports.edit = function(req, res) {
     //req.params.id = /:id
     const { id } = req.params
-    const foundInstructor = data.instructors.find(function (instructor) {
+    const foundInstructor = data.instructors.find(function(instructor) {
         return instructor.id == id
     })
 
@@ -82,16 +82,15 @@ exports.edit = function (req, res) {
         birth: date(foundInstructor.birth) //2000-2-1
     }
 
-    return res.render('instructors/edit', {instructor })
+    return res.render('instructors/edit', { instructor })
 }
 
-// put
-exports.put = function(req, res){
+exports.put = function(req, res) {
     const { id } = req.body
     let index = 0
 
-    const foundInstructor = data.instructors.find(function (instructor, foundIndex) {
-        if (id == instructor.id){
+    const foundInstructor = data.instructors.find(function(instructor, foundIndex) {
+        if (id == instructor.id) {
             index = foundIndex
             return true
         }
@@ -108,27 +107,25 @@ exports.put = function(req, res){
 
     data.instructors[index] = instructor
 
-    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err){
-        if(err) return res.send('Write error!')
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err) {
+        if (err) return res.send('Write error!')
 
         return res.redirect(`/instructors/${id}`)
     })
 }
 
-//delete
-exports.delete = function(req, res){
-    const {id} = req.body
+exports.delete = function(req, res) {
+    const { id } = req.body
 
-    const filteredInstructors = data.instructors.filter(function(instructor){
+    const filteredInstructors = data.instructors.filter(function(instructor) {
         return instructor.id != id
     })
 
     data.instructors = filteredInstructors
 
-    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err){
-        if(err) return res.send('Write file error!')
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err) {
+        if (err) return res.send('Write file error!')
     })
 
     return res.redirect('/instructors')
 }
-
