@@ -1,40 +1,53 @@
 {
-    "members": [],
-    "instructors": [{
-            "id": 1,
-            "avatar_url": "https://avatars0.githubusercontent.com/u/50502905?s=460&u=7991481c5fe3747a527a857553f7c6a37f5fff1a&v=4",
-            "name": "Lucas Seguessi",
-            "birth": 679622400000,
-            "gender": "M",
-            "services": "Academia, Musculação, crossfit",
-            "created_at": 1588943272865
-        },
-        {
-            "id": 2,
-            "avatar_url": "https://images.unsplash.com/photo-1470919543690-22e21c13163d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
-            "name": "Beatriz Seguessi",
-            "birth": 568252800000,
-            "gender": "F",
-            "services": "Kung-fu",
-            "created_at": 1588943308013
-        },
-        {
-            "id": 4,
-            "avatar_url": "https://images.unsplash.com/photo-1566581184707-0ff96ae2f0bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
-            "name": "Lucia",
-            "birth": -455846400000,
-            "gender": "F",
-            "services": "Tudo no mundo",
-            "created_at": 1589242533404
-        },
-        {
-            "id": 5,
-            "avatar_url": "https://images.unsplash.com/flagged/photo-1556895368-9d1eed826c58?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80",
-            "name": "Luiz Carlos",
-            "birth": -455846400000,
-            "gender": "M",
-            "services": "Tudo no mundo",
-            "created_at": 1589242533404
-        }
-    ]
+  "members": [
+    {
+      "avatar_url": "https://avatars0.githubusercontent.com/u/50502905?s=460&u=7991481c5fe3747a527a857553f7c6a37f5fff1a&v=4",
+      "name": "Lucas",
+      "email": "lucas.seguessi@gmail.com",
+      "birth": 679622400000,
+      "gender": "M",
+      "blood": "A+",
+      "weight": "130",
+      "height": "190",
+      "id": 1
+    }
+  ],
+  "instructors": [
+    {
+      "id": 1,
+      "avatar_url": "https://avatars0.githubusercontent.com/u/50502905?s=460&u=7991481c5fe3747a527a857553f7c6a37f5fff1a&v=4",
+      "name": "Lucas Seguessi",
+      "birth": 679622400000,
+      "gender": "M",
+      "services": "Academia, Musculação, crossfit",
+      "created_at": 1588943272865
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1470919543690-22e21c13163d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+      "name": "Beatriz Seguessi",
+      "birth": 568252800000,
+      "gender": "F",
+      "services": "Kung-fu",
+      "created_at": 1588943308013
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://images.unsplash.com/photo-1566581184707-0ff96ae2f0bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      "name": "Lucia",
+      "birth": -455846400000,
+      "gender": "F",
+      "services": "Tudo no mundo",
+      "created_at": 1589242533404
+    },
+    {
+      "id": 5,
+      "avatar_url": "https://images.unsplash.com/flagged/photo-1556895368-9d1eed826c58?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80",
+      "name": "Luiz Carlos",
+      "birth": -455846400000,
+      "gender": "M",
+      "services": "Tudo no mundo",
+      "created_at": 1589242533404
+    }
+  ]
 }
