@@ -1,6 +1,7 @@
 const express = require('express')
 const routes = express.Router()
-const teachers = require('./teachers')
+const teachers = require('./controllers/teachers')
+const students = require('./controllers/students')
 
 routes.get('/', function(req, res){
     return res.redirect('/teachers')
@@ -11,29 +12,23 @@ routes.get('/teachers', teachers.index)
 routes.get('/teachers/create', function(req, res){
     return res.render('teachers/create')
 })
-
-//show teachers
 routes.get('/teachers/:id', teachers.show)
-
-//Edit teachers
 routes.get('/teachers/:id/edit', teachers.edit)
-
 routes.post('/teachers', teachers.post)
-
-//Save Edit
 routes.put('/teachers', teachers.put)
-
-//Delete
 routes.delete('/teachers', teachers.delete)
 
+// Students
+routes.get('/students', students.index)
 
-//Rote for students
-routes.get('/students', function(req, res){
-    return res.send('Olá Estudante')
+routes.get('/students/create', function(req, res){
+    return res.render('students/create')
 })
+routes.get('/students/:id', students.show)
+routes.get('/students/:id/edit', students.edit)
+routes.post('/students', students.post)
+routes.put('/students', students.put)
+routes.delete('/students', students.delete)
 
-// routes.use(function(req, res){
-//     return res.status(404).render('not-found')
-// })
 
 module.exports = routes
