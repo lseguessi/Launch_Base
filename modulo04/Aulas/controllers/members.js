@@ -72,7 +72,7 @@ exports.edit = function (req, res) {
 
     const member = {
         ...foundMember,
-        birth: date(foundMember.birth) //2000-2-1
+        birth: date(foundMember.birth).iso
     }
 
     return res.render('members/edit', { member })
