@@ -1,15 +1,15 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-    
+
     <div class="card table-container">
         <a href="/students/create">Novo</a>
         <table width="100%">
             <thead>
                 <tr>
                     <th>Nome Completo</th>
-                    <th>Acompanhamento</th>
-                    <th>Ação</th>
+                    <th>Email</th>
+                    <th>Ano Escolar</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,15 +19,18 @@
                             <span style="background-image: url({{ student.avatar_url }})"></span>
                             {{ student.name }}
                         </td>
-                        <td> {{ student.follow }}</td>
+                        <td>
+                            {{ student.email }}</td>
+                        <td>
+                            {{ student.classYear }}</td>
                         <td>
                             <a href="/students/{{ student.id }}">Ver</a>
                         </td>
                     </tr>
                 {% endfor %}
-            </tbody>       
+            </tbody>
         </table>
 
-    </div>    
+    </div>
 
 {% endblock content %}

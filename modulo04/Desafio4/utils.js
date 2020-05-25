@@ -1,5 +1,5 @@
 module.exports = {
-    age: function(timestamp) { //timestamp = 679622400000
+    age: function (timestamp) { //timestamp = 679622400000
 
         //recupera valor da data de hoje
         const today = new Date()
@@ -16,7 +16,7 @@ module.exports = {
         return age
     },
 
-    date: function(timestamp) {
+    date: function (timestamp) {
         const date = new Date(timestamp)
 
         const year = date.getUTCFullYear()
@@ -32,7 +32,7 @@ module.exports = {
         }
     },
 
-    graduation: function(value) {
+    graduation: function (value) {
         let graduation = value
         switch (graduation) {
             case "middle_complet":
@@ -46,7 +46,7 @@ module.exports = {
         }
     },
 
-    classes: function(value) {
+    classes: function (value) {
         let classes = value
         if (classes == "D") {
             return classes = "À Distância"
@@ -55,7 +55,23 @@ module.exports = {
         }
     },
 
-    grade: function(value) {
-
+    grade: function (value) {
+        let classYear = value
+        switch (classYear) {
+            case "5ef":
+                return classYear = "5° Ano Ensino Fundamental"
+            case "6ef":
+                return classYear = "6° Ano Ensino Fundamental"
+            case "7ef":
+                return classYear = "7° Ano Ensino Fundamental"
+            case "8ef":
+                return classYear = "8° Ano Ensino Fundamental"
+            case "1em":
+                return classYear = "1° Ano Ensino Médio"
+            case "2em":
+                return classYear = "2° Ano Ensino Médio"
+            case "3em":
+                return classYear = "3° Ano Ensino Médio"
+        }
     }
 }

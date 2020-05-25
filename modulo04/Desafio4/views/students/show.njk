@@ -15,29 +15,23 @@
             </div>
 
             <div class="item">
+                <div>Email</div>
+                <div>{{ student.email }}</div>
+            </div>
+
+            <div class="item">
                 <div>Aniversário</div>
                 <div>{{ student.birth }}</div>
             </div>
 
             <div class="item">
-                <div>Grau de Escolaridade</div>
-                <div>{{ student.school }}</div>
+                <div>Ano Escolar</div>
+                <div>{{ student.classYear }}</div>
             </div>
 
             <div class="item">
-                <div>Tipo de Aula</div>
-                <div>
-                        <span>{{ student.classes }}</span>
-                </div>
-            </div>
-
-            <div class="item">
-                <div>Acompanhamento</div>
-                <div>
-                    {% for service in student.follow %}
-                        <span>{{ service }}</span>
-                    {% endfor %}
-                </div>
+                <div>Carga Horária de aulas particulares</div>
+                <div>{{ student.hours }} Horas</div>
             </div>
 
             <div class="item">

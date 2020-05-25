@@ -23,7 +23,7 @@
         type="email" 
         name="email"
         placeholder="email@email.com"
-        value="{{ student.mail }}"
+        value="{{ student.email }}"
     >
 </div>
 <div class="item">
@@ -36,15 +36,36 @@
 </div>
 
 <div class="item">
-    <div>Email</div>
+    <div>Ano Escolar</div>
     <select name="classYear">
-        <option value="5ef">5° Ano Ensino Fundamental</option>
-        <option value="6ef">6° Ano Ensino Fundamental</option>
-        <option value="7ef">7° Ano Ensino Fundamental</option>
-        <option value="8ef">8° Ano Ensino Fundamental</option>
-        <option value="1em">1° Ano Ensino Médio</option>
-        <option value="2em">2° Ano Ensino Médio</option>
-        <option value="3em">3° Ano Ensino Médio</option>
+        <option value="5ef"
+        {% if student.classYear =="5ef" %} selected {% endif %}>
+            5° Ano Ensino Fundamental
+        </option>
+        <option value="6ef"
+        {% if student.classYear =="6ef" %} selected {% endif %}>
+            6° Ano Ensino Fundamental
+        </option>
+        <option value="7ef"
+        {% if student.classYear =="7ef" %} selected {% endif %}>
+            7° Ano Ensino Fundamental
+        </option>
+        <option value="8ef"
+        {% if student.classYear =="8ef" %} selected {% endif %}>
+            8° Ano Ensino Fundamental
+        </option>
+        <option value="1em"
+        {% if student.classYear =="1em" %} selected {% endif %}>
+            1° Ano Ensino Médio
+        </option>
+        <option value="2em"
+        {% if student.classYear =="2em" %} selected {% endif %}>
+            2° Ano Ensino Médio
+        </option>
+        <option value="3em"
+        {% if student.classYear =="3em" %} selected {% endif %}>
+            3° Ano Ensino Médio
+        </option>
     </select>
 </div>
 

@@ -1,10 +1,17 @@
 const fs = require('fs')
 const Intl = require('Intl')
 const data = require('../data.json')
-const { age, date, graduation, classes } = require('../utils')
+const { grade, date } = require('../utils')
 
 exports.index = function(req, res) {
-    return res.render('students/index', { students: data.students })
+    const students =[]
+    for(let student of data.students){
+        students.push({
+            ...student,
+            classYear: grade(student.classYear)
+        })
+    }
+    return res.render('students/index', { students })
 }
 exports.post = function(req, res) {
     const keys = Object.keys(req.body)
@@ -45,6 +52,7 @@ exports.show = function(req, res) {
     const student = {
         ...foundStudent,
         birth: date(foundStudent.birth).birthDay,
+        classYear: grade(foundStudent.classYear),
         created_at: new Intl.DateTimeFormat('pt-BR').format(foundStudent.created_at),
     }
     return res.render('students/show', { student })
@@ -54,12 +62,11 @@ exports.edit = function(req, res) {
     const foundStudent = data.students.find(function(student) {
         return student.id == id
     })
-    if (!foundStudent) return res.send('Tecaher not found !')
+    if (!foundStudent) return res.send('Student not found !')
     const student = {
         ...foundStudent,
-        birth: date(foundStudent.birth),
-        school: graduation(foundStudent.school),
-        classes: classes(foundStudent.classes),
+        birth: date(foundStudent.birth).iso,
+        classYear: grade(foundStudent.classYear)
     }
     return res.render('students/edit', { student })
 }
