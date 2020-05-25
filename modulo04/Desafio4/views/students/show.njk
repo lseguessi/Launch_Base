@@ -4,48 +4,48 @@
 
     <div class="card">
         <section class="image" 
-            style="background: url({{ teacher.avatar_url }}) no-repeat center center / cover"></section>
+            style="background: url({{ student.avatar_url }}) no-repeat center center / cover"></section>
         <section class="infos">
 
             <h3>Detalhes</h3>
 
             <div class="item">
                 <div>Nome Completo</div>
-                <div>{{ teacher.name }}</div>
+                <div>{{ student.name }}</div>
             </div>
 
             <div class="item">
-                <div>Idade</div>
-                <div>{{ teacher.age }}</div>
+                <div>Aniversário</div>
+                <div>{{ student.birth }}</div>
             </div>
 
             <div class="item">
                 <div>Grau de Escolaridade</div>
-                <div>{{ teacher.school }}</div>
+                <div>{{ student.school }}</div>
             </div>
 
             <div class="item">
                 <div>Tipo de Aula</div>
                 <div>
-                        <span>{{ teacher.classes }}</span>
+                        <span>{{ student.classes }}</span>
                 </div>
             </div>
 
             <div class="item">
                 <div>Acompanhamento</div>
                 <div>
-                    {% for service in teacher.follow %}
+                    {% for service in student.follow %}
                         <span>{{ service }}</span>
                     {% endfor %}
                 </div>
             </div>
 
             <div class="item">
-                <div>Desde</div>
-                <div>{{ teacher.created_at }}</div>
+                <div>Aluno desde</div>
+                <div>{{ student.created_at }}</div>
             </div>
 
-            <a href="/teachers/{{ teacher.id }}/edit" class="button">Editar</a>
+            <a href="/students/{{ student.id }}/edit" class="button">Editar</a>
 
         </section>
     </div>

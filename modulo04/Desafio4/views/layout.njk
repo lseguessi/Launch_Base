@@ -1,37 +1,22 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>Teachers and Students</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/style.css">
+    <head>
+        <title>Teachers and Students</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="/style.css">
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <header>
+            <div class="links">
+                <a href="/teachers">Teachers</a>
+                <a href="/students">Students</a>
+            </div>
+        </header>
+        {% block content %}{% endblock %}
 
-    {% block head %}
+        <script src="/script.js"></script>
 
-    {% endblock %}
-
-</head>
-
-<body>
-    <header>
-        <div class="links">
-            <a href="/">Teachers</a>
-            <a href="/students">Students</a>
-        </div>
-    </header>
-
-   {% block content %}
-        <!-- Vai ser preenchido pelas outras páginas -->
-   {% endblock %}
-
-    {# <footer>
-        <div class="links-social">
-            <a href="https://github.com/lseguessi" target="_blank">Github</a>
-            <a href="https://www.twitter.com/lseguessi" target="_blank">Twitter</a>
-            <a href="https://www.linkedin.com/in/lucas-seguessi-801a1045/" target="_blank">LinkedIn</a>
-        </div>
-    </footer> #}
-
-</body>
-
+    </body>
 </html>

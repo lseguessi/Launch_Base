@@ -1,23 +1,21 @@
 const fs = require('fs')
 const Intl = require('Intl')
 const data = require('../data.json')
-const {age, date, graduation, classes} = require('../utils')
+const { age, date, graduation, classes } = require('../utils')
 
-//Index
-exports.index = function(req, res){
-    return res.render('teachers/index', { teachers: data.teachers})
+exports.index = function(req, res) {
+    return res.render('teachers/index', { teachers: data.teachers })
 }
-//Create data
-exports.post = function(req, res){
+exports.post = function(req, res) {
     const keys = Object.keys(req.body)
 
-    for(key of keys){
-        if(req.body[key] == ""){
+    for (key of keys) {
+        if (req.body[key] == "") {
             return res.send('Por favor preencha todos os campos')
         }
     }
 
-    let {avatar_url, name, birth, school, follow, classes} = req.body
+    let { avatar_url, name, birth, school, follow, classes } = req.body
 
     birth = Date.parse(birth)
     const created_at = Date.now()
@@ -34,25 +32,24 @@ exports.post = function(req, res){
         created_at
     })
 
-    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err){
-        if(err) return res.send('Write file error!')
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err) {
+        if (err) return res.send('Write file error!')
 
         return res.redirect('/teachers')
     })
 }
-//Show
-exports.show = function(req, res){
+exports.show = function(req, res) {
     //req.params.id = /:id
 
-    const {id} = req.params
+    const { id } = req.params
 
-    const foundTeacher = data.teachers.find(function(teacher){
+    const foundTeacher = data.teachers.find(function(teacher) {
         return teacher.id == id
     })
 
-    if(!foundTeacher) return res.send('Tecaher not found !')
+    if (!foundTeacher) return res.send('Tecaher not found !')
 
-    const teacher ={
+    const teacher = {
         ...foundTeacher,
         age: age(foundTeacher.birth), // feito
         school: graduation(foundTeacher.school), //feito
@@ -64,31 +61,29 @@ exports.show = function(req, res){
     return res.render('teachers/show', { teacher })
 
 }
-//Edit
-exports.edit = function(req, res){
+exports.edit = function(req, res) {
     const { id } = req.params
 
-    const foundTeacher = data.teachers.find(function(teacher){
+    const foundTeacher = data.teachers.find(function(teacher) {
         return teacher.id == id
     })
 
-    if(!foundTeacher) return res.send('Tecaher not found !')
+    if (!foundTeacher) return res.send('Tecaher not found !')
 
     const teacher = {
         ...foundTeacher,
-        birth: date(foundTeacher.birth), 
+        birth: date(foundTeacher.birth),
         school: graduation(foundTeacher.school),
-        classes: classes(foundTeacher.classes), 
+        classes: classes(foundTeacher.classes),
 
     }
 
     return res.render('teachers/edit', { teacher })
 }
-//Put
 exports.put = function(req, res) {
     const { id } = req.body
     let index = 0
-    
+
     const foundTeacher = data.teachers.find(function(teacher, foundIndex) {
         if (id == teacher.id) {
             index = foundIndex
@@ -110,23 +105,22 @@ exports.put = function(req, res) {
     data.teachers[index] = teacher
 
     fs.writeFile("data.json", JSON.stringify(data, null, 4), function(err) {
-        if(err) return res.send("Write error.")
+        if (err) return res.send("Write error.")
 
         return res.redirect(`/teachers/${id}`)
     })
 }
-//Delete
-exports.delete = function(req, res){
-    const {id} = req.body
-    
-    const filteredTeachers = data.teachers.filter(function(teacher){
+exports.delete = function(req, res) {
+    const { id } = req.body
+
+    const filteredTeachers = data.teachers.filter(function(teacher) {
         return teacher.id != id
     })
 
     data.teachers = filteredTeachers
 
-    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err){
-        if(err) return res.send('Write file error')
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err) {
+        if (err) return res.send('Write file error')
     })
 
     return res.redirect('/teachers')

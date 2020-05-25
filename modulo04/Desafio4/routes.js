@@ -3,13 +3,11 @@ const routes = express.Router()
 const teachers = require('./controllers/teachers')
 const students = require('./controllers/students')
 
-routes.get('/', function(req, res){
+routes.get('/', function(req, res) {
     return res.redirect('/teachers')
 })
-
 routes.get('/teachers', teachers.index)
-
-routes.get('/teachers/create', function(req, res){
+routes.get('/teachers/create', function(req, res) {
     return res.render('teachers/create')
 })
 routes.get('/teachers/:id', teachers.show)
@@ -20,8 +18,7 @@ routes.delete('/teachers', teachers.delete)
 
 // Students
 routes.get('/students', students.index)
-
-routes.get('/students/create', function(req, res){
+routes.get('/students/create', function(req, res) {
     return res.render('students/create')
 })
 routes.get('/students/:id', students.show)
