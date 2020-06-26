@@ -1,7 +1,43 @@
-const fs = require('fs')
 const Intl = require('Intl')
-const data = require('../data.json')
-const { grade, date } = require('../utils')
+const { grade, date } = require('../../lib/utils')
+const db = require('../../config/db')
+
+module.exports = {
+
+    index(req, res){
+        
+    },
+    create(req, res){
+        
+        return res.render('students/create')
+
+    },
+    post(req, res){
+        
+    },
+    show(req, res){
+        
+    },
+    edit(req, res){
+        
+    },
+    put(req, res){
+        const keys = Object.keys(req.body)
+
+        for (key of keys) {
+            if (req.body[key] == "") {
+                return res.send('Por favor preencha todos os campos')
+            }
+        }
+
+
+    },
+    delete(req, res){
+        
+    }
+
+}
+
 
 exports.index = function(req, res) {
     const students =[]

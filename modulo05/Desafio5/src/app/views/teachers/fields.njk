@@ -21,13 +21,13 @@
     <div>Data de Nascimento</div>
     <input 
         type="date"
-        name="birth"
+        name="birth_date"
         value="{{ teacher.birth }}"
     >
 </div>
 <div class="item">
     <div>Grau de Escolaridade</div>
-    <select name="school">
+    <select name="education_level">
         <option value="middle_complet">Ensino Médio Completo</option>
 
         <option value="superior_complet">Ensino Superior Completo</option>
@@ -41,8 +41,8 @@
 <div class="item">
     <div>Tipo de Aula</div>
     <div>
-        <span><input type="radio" name="classes" value="P" checked> Presencial</span>
-        <span><input type="radio" name="classes" value="D"> À Distância</span>
+        <span><input type="radio" name="class_type" value="P" checked> Presencial</span>
+        <span><input type="radio" name="class_type" value="D"> À Distância</span>
     </div>
 </div>
 
@@ -51,9 +51,9 @@
     <div>
         <input 
             type="text" 
-            name="follow"
+            name="subjects_taught"
             placeholder="Matemática, Física, Quimíca...etc"
-            value="{{ teacher.follow }}"
+            value="{{ teacher.subjects_taught }}"
         >
     </div>
 </div>
