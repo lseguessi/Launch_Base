@@ -1,11 +1,16 @@
 const Intl = require('Intl')
+const member = require('../models/member')
 const { age, date } = require('../../lib/utils')
+
+
 
 module.exports = {
     index(req, res){
 
-        return res.render('members/index')
-
+        member.all(function(members){
+            return res.render('members/index', { members })
+        })
+        
     },
     create(req, res){
 
@@ -21,14 +26,33 @@ module.exports = {
                 return res.send('Please fill all fields')
             }
         }
+
+        member.create(req.body, function(member){
+            return res.redirect(`/members/${member.id}`)
+        })   
         
-            return 
+
     },
     show(req, res){
-         return
+         
+        member.find(req.params.id, function(member){
+            if(!member) return res.send("Member not found!")
+
+            member.birth = date(member.birth).birthDay
+
+            return res.render('members/show',{ member })
+        })
+
     },
     edit(req, res){
-        return
+
+        member.find(req.params.id, function(member){
+            if(!member) return res.send("Member not found!")
+
+            member.birth = date(member.birth).iso
+
+            return res.render('members/edit',{ member })
+        })
     },
     put(req, res){
 
@@ -39,9 +63,17 @@ module.exports = {
                 return res.send('Please fill all fields')
             }
         }
-        return
+        
+        member.update(req.body, function(){
+            return res.redirect(`members/${req.body.id}`)
+        })
+
     },
     delete(req, res){
-        return
+        
+        member.delete(req.body.id, function(){
+            return res.redirect(`members`)
+        })
+
     },
 }
