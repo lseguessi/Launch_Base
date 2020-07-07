@@ -30,14 +30,14 @@
     <div>Data de Nascimento</div>
     <input 
         type="date"
-        name="birth"
-        value="{{ student.birth }}"
+        name="birth_date"
+        value="{{ student.birth_date }}"
     >
 </div>
 
 <div class="item">
     <div>Ano Escolar</div>
-    <select name="classYear">
+    <select name="class_year">
         <option value="5ef"
         {% if student.classYear =="5ef" %} selected {% endif %}>
             5° Ano Ensino Fundamental
