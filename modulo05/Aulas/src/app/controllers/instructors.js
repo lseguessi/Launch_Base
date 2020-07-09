@@ -48,7 +48,7 @@ module.exports = {
     },
     edit(req, res){
 
-        instructor.find(req.params.id, function(instructor){
+        instructor.show(req.params.id, function(instructor){
             if(!instructor) return res.send("Instructor not found!")
 
             instructor.birth = date(instructor.birth).iso

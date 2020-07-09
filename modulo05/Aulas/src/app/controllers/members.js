@@ -1,5 +1,5 @@
 const Intl = require('Intl')
-const member = require('../models/member')
+const Member = require('../models/member')
 const { age, date } = require('../../lib/utils')
 
 
@@ -7,14 +7,17 @@ const { age, date } = require('../../lib/utils')
 module.exports = {
     index(req, res){
 
-        member.all(function(members){
+        Member.all(function(members){
             return res.render('members/index', { members })
         })
         
     },
     create(req, res){
 
-        return res.render('members/create')
+        Member.instructorsSelectOptions(function(options) {
+            return res.render('members/create', { instructorOptions: options })
+        })
+
 
     },
     post(req, res){
@@ -27,7 +30,7 @@ module.exports = {
             }
         }
 
-        member.create(req.body, function(member){
+        Member.create(req.body, function(member){
             return res.redirect(`/members/${member.id}`)
         })   
         
@@ -35,7 +38,7 @@ module.exports = {
     },
     show(req, res){
          
-        member.find(req.params.id, function(member){
+        Member.find(req.params.id, function(member){
             if(!member) return res.send("Member not found!")
 
             member.birth = date(member.birth).birthDay
@@ -46,12 +49,14 @@ module.exports = {
     },
     edit(req, res){
 
-        member.find(req.params.id, function(member){
+        Member.find(req.params.id, function(member){
             if(!member) return res.send("Member not found!")
 
             member.birth = date(member.birth).iso
 
-            return res.render('members/edit',{ member })
+            Member.instructorsSelectOptions(function(options) {
+                return res.render('members/edit', { member, instructorOptions: options })
+            })
         })
     },
     put(req, res){
@@ -64,14 +69,14 @@ module.exports = {
             }
         }
         
-        member.update(req.body, function(){
+        Member.update(req.body, function(){
             return res.redirect(`members/${req.body.id}`)
         })
 
     },
     delete(req, res){
         
-        member.delete(req.body.id, function(){
+        Member.delete(req.body.id, function(){
             return res.redirect(`members`)
         })
 
