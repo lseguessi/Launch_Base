@@ -14,7 +14,7 @@ module.exports = {
     },
 
     create(data, callback){
-
+ 
         const query = `
         INSERT INTO students (
             avatar_url,
@@ -23,8 +23,9 @@ module.exports = {
             birth_date,
             class_year,
             hours,
-            created_at
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7)
+            created_at,
+            teacher_id
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
         RETURNING id
         `
 
@@ -35,7 +36,8 @@ module.exports = {
             date(data.birth_date).iso,
             data.class_year,
             data.hours,
-            date(Date.now()).iso
+            date(Date.now()).iso,
+            data.teacher
         ]
 
         db.query(query, values, function(err, results){

@@ -3,8 +3,7 @@
 {% block content %}
 
     <div class="card">
-        <section class="image" 
-            style="background: url({{ student.avatar_url }}) no-repeat center center / cover"></section>
+        <section class="image" style="background: url({{ student.avatar_url }}) no-repeat center center / cover"></section>
         <section class="infos">
 
             <h3>Detalhes</h3>
@@ -31,12 +30,18 @@
 
             <div class="item">
                 <div>Carga Horária de aulas particulares</div>
-                <div>{{ student.hours }} Horas</div>
+                <div>{{ student.hours }}
+                    Horas</div>
             </div>
 
             <div class="item">
                 <div>Aluno desde</div>
                 <div>{{ student.created_at }}</div>
+            </div>
+
+            <div class="item">
+                <div>Professor</div>
+                <div>{{ teachers.name }}</div>
             </div>
 
             <a href="/students/{{ student.id }}/edit" class="button">Editar</a>
