@@ -11,7 +11,7 @@
   <li><a href="https://github.com/lseguessi/launch_base/tree/master/modulo03"> Módulo 03 - Iniciando back-end </li>
   <li><a href="https://github.com/lseguessi/launch_base/tree/master/foody"> Foodfy - Receitas (NodeJs e Nunjucks) </li>
   <li><a href="https://github.com/lseguessi/launch_base/tree/master/modulo04"> Módulo 04 - Criação Gym Manager </li>
-  <li><a href="https://github.com/lseguessi/launch_base/tree/master/modulo05"> Módulo 05 - Persistindo dados (Postgres) </li>
+  <li><a href="https://github.com/lseguessi/gym_manager"> Módulo 05 - Persistindo dados (Postgres) </li>
   <li> Continua.... 🚀🚀</li>
 </ul>
 
