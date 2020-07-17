@@ -66,8 +66,9 @@ module.exports = {
                 email=($3),
                 birth_date=($4),
                 class_year=($5),
-                hours=($6)
-            WHERE id = $7
+                hours=($6),
+                teacher_id=($7)
+            WHERE id = $8
         `
         const values = [
             data.avatar_url, 
@@ -76,6 +77,7 @@ module.exports = {
             date(data.birth_date).iso,
             data.class_year,
             data.hours,
+            data.teacher,
             data.id
         ]
 
