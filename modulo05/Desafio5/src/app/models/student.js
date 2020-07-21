@@ -1,5 +1,5 @@
 const db = require('../../config/db')
-const { date } = require('../../lib/utils')
+const { date, grade } = require('../../lib/utils')
 
 module.exports = {
 
@@ -34,7 +34,7 @@ module.exports = {
             data.name,
             data.email,
             date(data.birth_date).iso,
-            data.class_year,
+            grade(data.class_year),
             data.hours,
             date(Date.now()).iso,
             data.teacher
@@ -75,7 +75,7 @@ module.exports = {
             data.name,
             data.email,
             date(data.birth_date).iso,
-            data.class_year,
+            grade(data.class_year),
             data.hours,
             data.teacher,
             data.id
@@ -97,6 +97,14 @@ module.exports = {
                 callback()
             })
 
+    },
+
+    teacherSelectOption(callback){
+        db.query(`SELECT name, id FROM teachers`, function(err, results){
+            if(err) throw `Database error ${err}`
+
+            callback(results.rows)
+        })
     }
 
 }

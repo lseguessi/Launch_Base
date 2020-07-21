@@ -28,7 +28,7 @@ module.exports = {
             month,
             year,
             iso: `${year}-${month}-${day}`,
-            iso2: `${day} / ${month} / ${year}`,
+            iso2: `${day}/${month}/${year}`,
             birthDay: `${day}-${month}`
         }
     },
@@ -57,22 +57,22 @@ module.exports = {
     },
 
     grade: function (value) {
-        let classYear = value
-        switch (classYear) {
+        let class_year = value
+        switch (class_year) {
             case "5ef":
-                return classYear = "5° Ano Ensino Fundamental"
+                return class_year = "5° Ano Ensino Fundamental"
             case "6ef":
-                return classYear = "6° Ano Ensino Fundamental"
+                return class_year = "6° Ano Ensino Fundamental"
             case "7ef":
-                return classYear = "7° Ano Ensino Fundamental"
+                return class_year = "7° Ano Ensino Fundamental"
             case "8ef":
-                return classYear = "8° Ano Ensino Fundamental"
+                return class_year = "8° Ano Ensino Fundamental"
             case "1em":
-                return classYear = "1° Ano Ensino Médio"
+                return class_year = "1° Ano Ensino Médio"
             case "2em":
-                return classYear = "2° Ano Ensino Médio"
+                return class_year = "2° Ano Ensino Médio"
             case "3em":
-                return classYear = "3° Ano Ensino Médio"
+                return class_year = "3° Ano Ensino Médio"
         }
     }
 }

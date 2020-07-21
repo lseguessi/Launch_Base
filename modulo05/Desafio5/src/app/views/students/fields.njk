@@ -19,25 +19,25 @@
 <div class="item">
     <div>Ano Escolar</div>
     <select name="class_year">
-        <option value="5ef" {% if student.classYear =="5ef" %} selected="selected" {% endif %}>
+        <option value="5ef" {% if student.class_year =="5ef" %} selected="selected" {% endif %}>
             5° Ano Ensino Fundamental
         </option>
-        <option value="6ef" {% if student.classYear =="6ef" %} selected="selected" {% endif %}>
+        <option value="6ef" {% if student.class_year =="6ef" %} selected="selected" {% endif %}>
             6° Ano Ensino Fundamental
         </option>
-        <option value="7ef" {% if student.classYear =="7ef" %} selected="selected" {% endif %}>
+        <option value="7ef" {% if student.class_year =="7ef" %} selected="selected" {% endif %}>
             7° Ano Ensino Fundamental
         </option>
-        <option value="8ef" {% if student.classYear =="8ef" %} selected="selected" {% endif %}>
+        <option value="8ef" {% if student.class_year =="8ef" %} selected="selected" {% endif %}>
             8° Ano Ensino Fundamental
         </option>
-        <option value="1em" {% if student.classYear =="1em" %} selected="selected" {% endif %}>
+        <option value="1em" {% if student.class_year =="1em" %} selected="selected" {% endif %}>
             1° Ano Ensino Médio
         </option>
-        <option value="2em" {% if student.classYear =="2em" %} selected="selected" {% endif %}>
+        <option value="2em" {% if student.class_year =="2em" %} selected="selected" {% endif %}>
             2° Ano Ensino Médio
         </option>
-        <option value="3em" {% if student.classYear =="3em" %} selected="selected" {% endif %}>
+        <option value="3em" {% if student.class_year =="3em" %} selected="selected" {% endif %}>
             3° Ano Ensino Médio
         </option>
     </select>
@@ -50,13 +50,15 @@
 
 <div class="item">
     <div>Professor</div>
-    <select name="teacher">
-        {% for teacher in teacherOption %}
-            <option value="{{teacher.id}}" {% if students.teacher_id == teacher.id %} selected="selected" {% endif %}>
-                {{teacher.name}}
-            </option>
-        {% endfor %}
-    </select>
+    <div>
+        <select name="teacher">
+            {% for teacher in teacherOption %}
+                <option value="{{teacher.id}}" {% if student.teacher_id == teacher.id %} selected="selected" {% endif %}>
+                    {{teacher.name}}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
 </div>
 
 <button type="submit">Salvar</button>
